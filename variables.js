@@ -16,3 +16,5 @@ var a1 = {
     prioductPricd: 25000
 };
 console.log(a1);
+
+

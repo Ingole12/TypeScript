@@ -22,7 +22,7 @@ enum directions{
     right
 }
 console.log(directions.up);
-console.log(directions.bottom);
+console.log(directions.right);
 
 enum ClientResponse{
     No = 0,
