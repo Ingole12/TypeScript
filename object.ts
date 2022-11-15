@@ -61,13 +61,15 @@ const one=[
       }
     ]
 ]
-for (let index1 = 0; index1 < one.length; index1++) {
-    const element = one[index1];
-    console.log(element); 
-}
-for (let index2 = 0; index2 < one[2].length; index2++) {
-    const element = one[2][index2];
-    console.log(element); 
-}
+console.log(one[2][0][4]);
+
+// for (let index1 = 0; index1 < one.length; index1++) {
+//     const element = one[index1];
+//     console.log(element); 
+// }
+// for (let index2 = 0; index2 < one[2].length; index2++) {
+//     const element = one[2][index2];
+//     console.log(element); 
+// }
 
 
