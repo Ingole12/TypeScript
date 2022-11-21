@@ -1,23 +1,28 @@
-class Organizer {
-   public id:number;
-   public name:string;
+class MainOrganizer {
+    public id:number;
+    public name:string;
+   public description:string;
+   public Starttime:string;
+   public address:string;
+   public display():void{
 
-   public display():void{  
-    
-      }
-public show(id,name):void{
-    this.id=id;
-    this.name=name;
-        console.log(` Organizer Id:${this.id}\n Organizer Name:${this.name}`);  
-        console.log(`----------------------------------`);
-        
-    }
+   }
 }
 
-class Event1 extends Organizer {
-   
-    description:string;
-    Starttime:string;
+class Organizer extends MainOrganizer {
+
+    constructor (id:number,name:string) {
+        super();
+        this.id=id;
+        this.name=name;
+      }
+   public display():void{  
+    console.log(` Organizer Id:${this.id}\n Organizer Name:${this.name}`);  
+    console.log(`----------------------------------`);
+      }
+}
+
+class Event1 extends MainOrganizer {
     constructor (id:number,name:string,description:string,Starttime:string) {
       super();
       this.id=id;
@@ -33,9 +38,7 @@ class Event1 extends Organizer {
     }
 }
 
-class Venue extends Organizer {
-    description:string;
-    address:string;
+class Venue extends MainOrganizer {
     constructor (id:number,name:string,description:string,address:string) {
       super();
       this.id=id;
@@ -50,9 +53,7 @@ class Venue extends Organizer {
     }
 }
 
-const objshow=new Organizer();
-objshow.show(10,"Raj");
-const org:Organizer[]=new Array(new Event1(20,"Seminar","Trading Seminar","19 Nov 2022") , new Venue(30,"SAS Halls","R.A.Puram","Pune"))
+const org:MainOrganizer[]=new Array(new Organizer(10,"Raj"),new Event1(20,"Seminar","Trading Seminar","20 Nov 2022  04-PM") , new Venue(30,"Pingale Sanai Hall"," Opp CANARA BANK - PUNE KOREGAON PARK","Pune"))
 
 for (const no of org) {
     no.display();

@@ -13,19 +13,27 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Organizer = /** @class */ (function () {
-    function Organizer() {
+var MainOrganizer = /** @class */ (function () {
+    function MainOrganizer() {
+    }
+    MainOrganizer.prototype.display = function () {
+    };
+    return MainOrganizer;
+}());
+var Organizer = /** @class */ (function (_super) {
+    __extends(Organizer, _super);
+    function Organizer(id, name) {
+        var _this = _super.call(this) || this;
+        _this.id = id;
+        _this.name = name;
+        return _this;
     }
     Organizer.prototype.display = function () {
-    };
-    Organizer.prototype.show = function (id, name) {
-        this.id = id;
-        this.name = name;
         console.log(" Organizer Id:".concat(this.id, "\n Organizer Name:").concat(this.name));
         console.log("----------------------------------");
     };
     return Organizer;
-}());
+}(MainOrganizer));
 var Event1 = /** @class */ (function (_super) {
     __extends(Event1, _super);
     function Event1(id, name, description, Starttime) {
@@ -42,7 +50,7 @@ var Event1 = /** @class */ (function (_super) {
         console.log("---------------------------------");
     };
     return Event1;
-}(Organizer));
+}(MainOrganizer));
 var Venue = /** @class */ (function (_super) {
     __extends(Venue, _super);
     function Venue(id, name, description, address) {
@@ -58,10 +66,8 @@ var Venue = /** @class */ (function (_super) {
         console.log(" Venue Id : ".concat(this.id, "\n Venue Name: ").concat(this.name, "\n Venue Description: ").concat(this.description, "\n Venue Address: ").concat(this.address));
     };
     return Venue;
-}(Organizer));
-var objshow = new Organizer();
-objshow.show(10, "Raj");
-var org = new Array(new Event1(20, "Seminar", "Trading Seminar", "19 Nov 2022"), new Venue(30, "SAS Halls", "R.A.Puram", "Pune"));
+}(MainOrganizer));
+var org = new Array(new Organizer(10, "Raj"), new Event1(20, "Seminar", "Trading Seminar", "20 Nov 2022  04-PM"), new Venue(30, "Pingale Sanai Hall", " Opp CANARA BANK - PUNE KOREGAON PARK", "Pune"));
 for (var _i = 0, org_1 = org; _i < org_1.length; _i++) {
     var no = org_1[_i];
     no.display();
